@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "balford-tools"
+version = "0.1.0"
+description = "Automated toolset for stamping, deep drawing, and sheet metal die design & simulation"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Balford", email = "shawn@balford.net" }]
+keywords = [
+  "deep-drawing", "metal-stamping", "progressive-die", "sheet-metal",
+  "die-design", "dfm", "stamping-simulation", "tooling", "manufacturing",
+]
+
+[project.scripts]
+balford = "balfordtools.cli:main"
+
+[tool.setuptools]
+packages = ["balfordtools"]
