@@ -1,5 +1,6 @@
 # Balford — Automated Toolset for Stamping, Deep Drawing & Die Design
 
+![tests](https://github.com/derlinnet-svg/balford/actions/workflows/tests.yml/badge.svg)
 ![License](https://img.shields.io/badge/license-MIT-00a86b)
 ![Python](https://img.shields.io/badge/python-3.9%2B-3776ab)
 ![Website](https://img.shields.io/badge/website-balford.net-00a86b)
@@ -46,9 +47,10 @@ Example output:
 ```text
 $ balford deep-draw --diameter 22 --height 45 --thickness 1.2
 Blank diameter (approx.) : 66.7 mm
-Draw ratio                : 3.03
-Verdict                   : multi-stage deep drawing required
-Hint                      : Balford designs multi-stage draw tooling in-house.
+Draw ratio               : 3.03
+Verdict                  : multi-stage
+Draw force (estimate)    : 77.3 kN
+Hint                     : Requires multi-stage deep drawing tooling (redraws and possible annealing).
 ```
 
 ## Python API
@@ -61,6 +63,35 @@ print(result.blank_diameter_mm)   # ~66.7
 print(result.draw_ratio)          # ~3.03
 print(result.verdict)             # "multi-stage"
 ```
+
+## Reference data
+
+The tables our engineers actually look up, as files you can diff, quote or drop
+into a spreadsheet. Every value is a planning figure for feasibility checks — the
+limiting draw ratio of a specific material lot still has to be confirmed in
+tooling tryout.
+
+| Data | File |
+|---|---|
+| Limiting draw ratio (first draw + redraw) by material | [`data/limit-draw-ratios.csv`](data/limit-draw-ratios.csv) |
+| Die clearance per side by material | [`data/die-clearance.csv`](data/die-clearance.csv) |
+| Deep drawing defects → cause → remedy | [`data/deep-drawing-defects.csv`](data/deep-drawing-defects.csv) |
+| Material designations and where they are used | [`data/deep-drawing-materials.csv`](data/deep-drawing-materials.csv) |
+
+Written out with the formulas, the stage-count estimate and the tolerance notes:
+
+- **[Deep drawing design guide](docs/deep-drawing-design-guide.md)** — blank diameter, draw ratio, draw force, die clearance, blank holder, ironing, defects, tolerances
+- **[DFM checklist](docs/dfm-checklist.md)** — what to send with a drawing so the first quotation round is the last one
+
+Highest-value numbers from the guide:
+
+| Material | Typical designation | First draw ratio |
+|---|---|---|
+| Low carbon steel | DC04, SPHE | 1.8 – 2.0 |
+| Pure iron | DT4, DT4C | 1.8 – 2.0 |
+| Brass / copper | CuZn37, Cu-ETP | 1.8 – 2.2 |
+| Stainless steel | 1.4301, 1.4404 | 1.6 – 1.8 |
+| Aluminium | EN AW-1050, 3003, 5754 | ~1.4 – 1.6 (alloy dependent) |
 
 ## Modules
 
@@ -76,11 +107,17 @@ print(result.verdict)             # "multi-stage"
 
 The formulas are simplified first-pass estimates used for feasibility and quoting sanity checks. Always validate critical geometries with a full DFM review, and confirm tooling decisions with experienced die engineers.
 
+- [Deep drawing guide — process, calculations, defects](https://balford.net/deep-drawing/)
+- [Deep drawing terminology — drawing, redrawing, ironing, hydroforming](https://balford.net/deep-drawing-terminology/)
 - [Deep draw stamping services — capabilities & limits](https://balford.net/capabilities/deep-draw-metal-stamping/)
+- [Capability boundaries, stated honestly](https://balford.net/deep-drawn-metal-stamping-our-capability-boundaries/)
 - [Progressive die stamping services](https://balford.net/capabilities/progressive-die-metal-stamping/)
 - [In-house tooling design & build](https://balford.net/capabilities/in-house-tooling-design-build/)
 - [Online calculators on balford.net](https://balford.net/resources/calculator/)
 - [PPAP-ready automotive documentation](https://balford.net/ppap/)
+
+The guide is also published in German (https://balford.net/de/tiefziehen/), Chinese
+(https://balford.net/zh/deep-drawing/), Japanese, French and Italian.
 
 ## Typical parts this toolset supports
 
@@ -90,6 +127,23 @@ The formulas are simplified first-pass estimates used for feasibility and quotin
 | Sensor housings (O₂, NOx, ABS) | multi-stage deep drawing | [sensor housing catalogue](https://balford.net/applications/sensor-housing/catalogue/) |
 | Motor sleeves & magnetic shields | deep drawing + annealing | [motor housing hub](https://balford.net/applications/motor-housing/) |
 | Washers, caps, brackets | progressive die stamping | [stamping services](https://balford.net/capabilities/metal-stamping-services/) |
+
+## Citing this toolset
+
+If you reference these numbers or the toolset in a design review, a paper or a
+supplier comparison, please cite it — `CITATION.cff` is included so GitHub, Zotero
+and reference managers can pick it up automatically.
+
+```text
+Balford (2026). Balford deep drawing & metal stamping design toolset (v0.2.0).
+https://github.com/derlinnet-svg/balford
+```
+
+## Contributing
+
+Corrections with a reference beat opinions. If a value in `data/` disagrees with
+your own tryout data, open an issue with the material, thickness, tooling setup
+and the measured result.
 
 ## Disclaimer
 
