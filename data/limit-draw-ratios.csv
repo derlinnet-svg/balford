@@ -1,0 +1,6 @@
+material,typical_designation,first_draw_ratio_min,first_draw_ratio_max,redraw_ratio_typical,notes
+Low carbon steel,"DC01, DC04, SPHE",1.8,2.0,1.2-1.4,Deep drawing grades with a high r-value behave best; DC04 is preferred over DC01 for deeper draws
+Pure iron,"DT4, DT4C",1.8,2.0,1.2-1.4,Soft and highly formable; common for solenoid and magnetic housings; magnetic annealing know-how required
+Brass and copper,"CuZn37, Cu-ETP",1.8,2.2,1.2-1.4,Excellent formability; watch galling and tool pick-up
+Stainless steel,"1.4301 (304), 1.4404 (316L)",1.6,1.8,1.15-1.3,Work hardens fast; plan an earlier anneal and an extra redraw for the same total reduction
+Aluminium,"EN AW-1050, 3003, 5754",1.4,1.6,1.15-1.3,Alloy dependent: soft grades draw well, high-strength alloys do not; confirm the limit for the specific alloy
