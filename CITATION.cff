@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If this toolset or its reference data helps your work, please cite it as below."
+title: "Balford deep drawing & metal stamping design toolset"
+abstract: >-
+  Command-line calculators and reference data for deep drawing and metal
+  stamping feasibility checks: blank diameter, draw ratio and limiting draw
+  ratios by material, die clearance, blanking force, bend allowance and blank
+  weight, plus a defect-to-remedy table and a DFM checklist.
+authors:
+  - name: "Balford"
+    website: "https://balford.net/"
+    email: "shawn@balford.net"
+type: software
+license: MIT
+repository-code: "https://github.com/derlinnet-svg/balford"
+url: "https://balford.net/deep-drawing/"
+keywords:
+  - deep drawing
+  - deep drawn parts
+  - metal stamping
+  - progressive die
+  - DFM
+  - draw ratio
+  - die clearance
+  - sheet metal
+  - tooling
+  - manufacturing
+date-released: "2026-09-07"
+version: "0.2.0"
