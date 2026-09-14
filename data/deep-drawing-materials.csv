@@ -1,0 +1,6 @@
+material,designation,typical_use_in_deep_drawn_parts,notes
+Low carbon steel,"DC01 / DC04 / SPHE",Solenoid housings and general drawn shells and cups,Best balance of formability and cost; DC04 for deeper draws
+Pure iron,"DT4 / DT4C",Magnetic housings and sleeves for solenoid and sensor parts,Soft and highly formable; needs magnetic annealing know-how
+Stainless steel,"1.4301 (304) / 1.4404 (316L)",Sensor housings and parts exposed to corrosion,Work hardens fast; more draws and an earlier anneal than carbon steel
+Aluminium,"EN AW-1050 / 3003 / 5754",Lightweight housings and heat shields,Lower E-modulus and r-value than steel; higher springback
+Brass and copper,"CuZn37 / Cu-ETP",Sensor housings and electrical or thermal parts,Excellent formability; watch galling
