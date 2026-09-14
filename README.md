@@ -1,6 +1,5 @@
 # Balford — Automated Toolset for Stamping, Deep Drawing & Die Design
 
-![tests](https://github.com/derlinnet-svg/balford/actions/workflows/tests.yml/badge.svg)
 ![License](https://img.shields.io/badge/license-MIT-00a86b)
 ![Python](https://img.shields.io/badge/python-3.9%2B-3776ab)
 ![Website](https://img.shields.io/badge/website-balford.net-00a86b)
