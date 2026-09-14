@@ -1,0 +1,9 @@
+defect,appearance,usual_cause,usual_remedy
+Wrinkling,Folds in the wall or flange,Blank holder force too low; flange unsupported,Increase blank holder pressure; adjust draw radius; add draw beads
+Tearing or fracture,Split at the die radius or in the wall,Ratio exceeds the material limit; die radius too tight; clearance too small; friction too high,Add a redraw; open the die radius; correct clearance; improve lubrication
+Earing,Wavy scalloped top edge,Planar anisotropy in the sheet,Accept and trim; change material or rolling direction; adjust blank shape
+Excessive thinning,Wall too thin at the radius,Die radius too tight; excessive tension,Increase die radius; add a redraw; anneal
+Springback,Diameter or shape relaxes after forming,Elastic recovery worse in high-strength material,Compensate tool dimensions; restrike; change material
+Orange peel,Grainy stretched surface,Coarse grain structure; excessive stretch,Finer-grain material; reduce local strain
+Draw marks or scoring,Longitudinal scratches on the wall,Tool wear; galling; inadequate lubricant,Polish the die radius; re-coat or re-polish tooling; review lubricant
+Bottom fracture,Split across the base,Punch radius too small; too little material available,Increase punch radius; enlarge the blank
