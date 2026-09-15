@@ -6,6 +6,8 @@ Typical K values: 0.33 for R > 2t, ~0.5 for sharp bends. Material and
 tooling condition change K, so treat results as first-pass estimates.
 """
 
+from __future__ import annotations
+
 import math
 
 
