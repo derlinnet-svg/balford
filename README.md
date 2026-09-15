@@ -6,6 +6,7 @@
 ![ISO 9001](https://img.shields.io/badge/ISO-9001%3A2015-003a00)
 ![IATF-aligned](https://img.shields.io/badge/IATF%2016949-practices-00a86b)
 ![PPAP](https://img.shields.io/badge/PPAP-ready-a8003d)
+[![tests](https://github.com/derlinnet-svg/balford/actions/workflows/tests.yml/badge.svg)](https://github.com/derlinnet-svg/balford/actions/workflows/tests.yml)
 
 Command-line calculators and design checks for **metal stamping, deep drawing, progressive die work and sheet metal bending** — the same rules our DFM engineers apply every day at [Balford](https://balford.net/), a 12,000 m² precision metal forming plant in Zhuji, Zhejiang, China.
 
