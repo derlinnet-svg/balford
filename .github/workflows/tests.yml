@@ -1,0 +1,38 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  cli:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: pip install -e .
+      - name: Deep draw check (multi-stage part)
+        run: balford deep-draw --diameter 22 --height 45 --thickness 1.2
+      - name: Deep draw check (single-hit part)
+        run: balford deep-draw --diameter 60 --height 18 --thickness 1.5
+      - name: Blanking force
+        run: balford blanking-force --perimeter 220 --thickness 1.5 --uts 400
+      - name: Bend allowance
+        run: balford bend-allowance --radius 2 --thickness 1.5 --angle 90
+      - name: Blank weight
+        run: balford weight --area 380 --thickness 1.5 --material steel
+      - name: Reference data files are present
+        run: |
+          test -s data/limit-draw-ratios.csv
+          test -s data/die-clearance.csv
+          test -s data/deep-drawing-defects.csv
+          test -s data/deep-drawing-materials.csv
+          test -s docs/deep-drawing-design-guide.md
